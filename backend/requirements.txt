@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+chromadb
+anthropic
+python-dotenv
+pydantic-settings
+arxiv
+vaderSentiment
+requests
+beautifulsoup4
+apscheduler
