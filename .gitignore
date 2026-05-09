@@ -1,0 +1,23 @@
+# 환경변수
+.env
+**/.env
+
+# 가상환경
+venv/
+**/venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# ChromaDB
+chroma_db/
+**/chroma_db/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
