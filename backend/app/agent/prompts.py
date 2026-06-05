@@ -9,6 +9,11 @@ def get_system_prompt(categories: list, keywords: list) -> str:
 카테고리: {', '.join(categories)}
 키워드: {', '.join(keywords)}
 
+[도구 사용 우선순위]
+1. 먼저 search_vectordb로 저장된 논문에서 검색
+2. 결과가 없을 때만 search_papers로 arXiv 검색
+3. arXiv 검색은 꼭 필요할 때만 사용
+
 [답변 규칙]
 - 초등학생도 이해할 수 있는 쉬운 말로 설명
 - 실생활 예시를 들어 설명
