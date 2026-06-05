@@ -25,10 +25,12 @@ def execute_tool(tool_name: str, tool_input: dict, db: Session) -> str:
         return update_categories(tool_input["categories"], tool_input["keywords"], db)
     return "알 수 없는 도구입니다."
 
-def run_agent(query: str, db: Session) -> str:
+def run_agent(query: str, db: Session, messages: list = None) -> str:
     setting = get_settings(db)
     system_prompt = get_system_prompt(setting.categories, setting.keywords)
-    messages = [{"role": "user", "content": query}]
+
+    if messages is None:
+        messages = [{"role": "user", "content": query}]
 
     while True:
         response = client.messages.create(

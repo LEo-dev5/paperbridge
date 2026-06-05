@@ -21,3 +21,10 @@ def vectorize(db: Session = Depends(get_db)):
 def test_discord():
     status = send_discord("🎉 PaperBridge 디스코드 연결 테스트!")
     return {"status": status}
+
+from app.scheduler.jobs import daily_briefing
+
+@router.post("/briefing")
+def run_briefing():
+    daily_briefing()
+    return {"message": "브리핑 완료"}
